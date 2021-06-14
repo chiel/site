@@ -36,3 +36,25 @@ jobs:
           docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
       - name: Push image to GHCR
         run: docker push $DOCKER_REPO/site:$GITHUB_SHA
+
+  deploy:
+    name: Deploy to kubernetes
+    runs-on: ubuntu-latest
+    needs:
+      - docker-lint
+      - docker-build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate kubernetes configs
+        run: >
+          envsubst < .k8s.template.yaml >> .k8s.yaml
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      - name: Save kubeconfig
+        run: doctl kubernetes cluster kubeconfig show default > .kubeconfig
+      - name: Apply kubernetes config
+        uses: docker://lachlanevenson/k8s-kubectl:v1.18.5
+        with:
+          args: --kubeconfig=.kubeconfig apply -f .k8s.yaml

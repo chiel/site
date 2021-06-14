@@ -1,0 +1,103 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: site
+  namespace: personal
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+  labels:
+    app.kubernetes.io/name: site
+    app.kubernetes.io/version: ${GITHUB_SHA}
+    app.kubernetes.io/component: http
+    app.kubernetes.io/part-of: site
+    app.kubernetes.io/managed-by: github-actions
+spec:
+  tls:
+    - hosts:
+        - kunkels.me
+        - www.kunkels.me
+      secretName: tls-kunkels-me
+  rules:
+    - host: kunkels.me
+      http:
+        paths:
+          - backend:
+              serviceName: site
+              servicePort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: site
+  namespace: personal
+  labels:
+    app.kubernetes.io/name: site
+    app.kubernetes.io/version: ${GITHUB_SHA}
+    app.kubernetes.io/component: http
+    app.kubernetes.io/part-of: site
+    app.kubernetes.io/managed-by: github-actions
+spec:
+  selector:
+    app.kubernetes.io/name: site
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: site
+  namespace: personal
+  labels:
+    app.kubernetes.io/name: site
+    app.kubernetes.io/version: ${GITHUB_SHA}
+    app.kubernetes.io/component: http
+    app.kubernetes.io/part-of: site
+    app.kubernetes.io/managed-by: github-actions
+data:
+  NODE_ENV: production
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site
+  namespace: personal
+  labels:
+    app.kubernetes.io/name: site
+    app.kubernetes.io/version: ${GITHUB_SHA}
+    app.kubernetes.io/component: http
+    app.kubernetes.io/part-of: site
+    app.kubernetes.io/managed-by: github-actions
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: site
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: site
+        app.kubernetes.io/version: ${GITHUB_SHA}
+        app.kubernetes.io/component: http
+        app.kubernetes.io/part-of: site
+        app.kubernetes.io/managed-by: github-actions
+    spec:
+      imagePullSecrets:
+        - name: ghcr.io
+      containers:
+        - name: app
+          image: ghcr.io/chiel/site:${GITHUB_SHA}
+          ports:
+            - name: http
+              containerPort: 7268
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: site
