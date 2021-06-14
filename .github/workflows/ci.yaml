@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  DOCKER_REPO: ghcr.io/chiel
+
 jobs:
   docker-lint:
     name: Lint Dockerfiles
@@ -17,3 +20,19 @@ jobs:
           entrypoint: hadolint
           args: >-
             Dockerfile
+
+  docker-build:
+    name: Build app docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the image
+        env:
+          DOCKER_BUILDKIT: 1
+        run: docker build -t $DOCKER_REPO/site:$GITHUB_SHA .
+      - name: Login to GHCR
+        run: >-
+          echo "${{ secrets.GITHUB_TOKEN }}" |
+          docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+      - name: Push image to GHCR
+        run: docker push $DOCKER_REPO/site:$GITHUB_SHA
