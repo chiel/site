@@ -34,6 +34,15 @@ export default {
 				loader: 'source-map-loader',
 				exclude: /node_modules/,
 			},
+			{
+				test: /\.jpg$/,
+				loader: 'file-loader',
+				exclude: /node_modules/,
+				options: {
+					outputPath: 'public/assets',
+					publicPath: '/assets',
+				},
+			},
 		],
 	},
 };
