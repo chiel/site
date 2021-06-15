@@ -1,6 +1,9 @@
 import 'source-map-support/register';
 
 import express from 'express';
+import React from 'react';
+
+import Root from '../app/components/Root';
 
 import { renderDocument } from './utils';
 
@@ -12,7 +15,7 @@ app.get('/favicon.ico', (_req, res) => {
 });
 
 app.get('*', (_req, res) => {
-	const markup = renderDocument('<p>Hello world.</p>');
+	const markup = renderDocument(<Root />);
 	res.send(markup);
 });
 

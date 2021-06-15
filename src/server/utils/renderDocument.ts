@@ -1,4 +1,9 @@
-export default function renderDocument(markup: string): string {
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+
+export default function renderDocument(component: React.ReactElement): string {
+	const markup = renderToString(component);
+
 	return `<!doctype html>
 <html lang="en">
 	<head>

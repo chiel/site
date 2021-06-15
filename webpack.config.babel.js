@@ -24,7 +24,7 @@ export default {
 	module: {
 		rules: [
 			{
-				test: /\.ts$/,
+				test: /\.tsx?$/,
 				loader: 'ts-loader',
 				exclude: /node_modules/,
 			},
