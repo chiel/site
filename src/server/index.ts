@@ -2,6 +2,8 @@ import 'source-map-support/register';
 
 import express from 'express';
 
+import { renderDocument } from './utils';
+
 const app = express();
 app.disable('x-powered-by');
 
@@ -10,7 +12,8 @@ app.get('/favicon.ico', (_req, res) => {
 });
 
 app.get('*', (_req, res) => {
-	res.send('<p>Hello world.</p>');
+	const markup = renderDocument('<p>Hello world.</p>');
+	res.send(markup);
 });
 
 const port = 7268;
