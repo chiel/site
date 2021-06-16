@@ -1,5 +1,24 @@
 import { useEffect, useState } from 'react';
 
+export function useLoopedValues(values: any[], { interval }: { interval: number }): any {
+	const [index, setIndex] = useState(0);
+
+	useEffect(() => {
+		const id = setTimeout(() => {
+			let newIndex = index + 1;
+			if (newIndex > values.length - 1) newIndex = 0;
+
+			setIndex(newIndex);
+		}, interval);
+
+		return () => {
+			clearTimeout(id);
+		};
+	}, [index]);
+
+	return values[index];
+}
+
 export function useViewportHeight() {
 	const initialHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
 	const [height, setHeight] = useState(initialHeight);

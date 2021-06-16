@@ -1,12 +1,22 @@
 import React, { useMemo } from 'react';
 
-import { useScrollOffset, useViewportHeight } from './hooks';
+import Title from '../Title';
+
+import { useLoopedValues, useScrollOffset, useViewportHeight } from './hooks';
 import useStyles from './styles';
+
+const interval = 2000;
 
 export default function Masthead() {
 	const css = useStyles();
 	const height = useViewportHeight();
 	const offset = useScrollOffset();
+	const title = useLoopedValues([
+		'full-stack developer',
+		'devops enthusiast',
+		'rxjs fanboy',
+		'gaming afficionado',
+	], { interval });
 
 	const effectiveOffset = useMemo(() => (
 		offset < 0 ? 0 : offset > height ? height : offset
@@ -26,9 +36,7 @@ export default function Masthead() {
 			<figure className={css.background} style={backgroundStyle} />
 			<div className={css.content} style={contentStyle}>
 				<h1>Chiel <span>Kunkels</span></h1>
-				<div className={css.titles}>
-					<p>Full-stack developer</p>
-				</div>
+				<Title className={css.titles} interval={interval}>{title}</Title>
 			</div>
 		</section>
 	);
