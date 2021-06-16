@@ -12,10 +12,22 @@ export default createUseStyles((theme: Theme) => ({
 		alignItems: 'center',
 		justifyContent: 'center',
 		height: 'calc(100vh - 8px)',
+
+		'&::after': {
+			content: '""',
+			position: 'absolute',
+			zIndex: 3,
+			left: 0,
+			right: 0,
+			bottom: 0,
+			height: 8,
+			background: 'linear-gradient(to bottom, transparent, rgba(0, 0, 0, .2))',
+		},
 	},
 
 	background: {
 		position: 'absolute',
+		zIndex: 1,
 		top: 0,
 		left: 0,
 		right: 0,
@@ -26,6 +38,8 @@ export default createUseStyles((theme: Theme) => ({
 	},
 
 	content: {
+		position: 'relative',
+		zIndex: 2,
 		width: '100%',
 		backfaceVisibility: 'hidden',
 		transform: 'translateZ(0)',
