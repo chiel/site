@@ -3,7 +3,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: site
-  namespace: personal
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     kubernetes.io/ingress.class: nginx
@@ -33,7 +32,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: site
-  namespace: personal
   labels:
     app.kubernetes.io/name: site
     app.kubernetes.io/version: ${GITHUB_SHA}
@@ -53,7 +51,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: site
-  namespace: personal
   labels:
     app.kubernetes.io/name: site
     app.kubernetes.io/version: ${GITHUB_SHA}
@@ -68,7 +65,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: site
-  namespace: personal
   labels:
     app.kubernetes.io/name: site
     app.kubernetes.io/version: ${GITHUB_SHA}
