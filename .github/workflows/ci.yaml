@@ -45,15 +45,11 @@ jobs:
       - docker-build
     steps:
       - uses: actions/checkout@v2
-      - name: Generate kubernetes configs
+      - name: Generate kubernetes manifests
         run: >
           envsubst < .k8s.template.yaml >> .k8s.yaml
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
-      - name: Save kubeconfig
-        run: doctl kubernetes cluster kubeconfig show default > .kubeconfig
+      - name: Create .kubeconfig
+        run: echo "${{ secrets.KUBECONFIG }}" > .kubeconfig
       - name: Apply kubernetes config
         uses: docker://lachlanevenson/k8s-kubectl:v1.18.5
         with:
