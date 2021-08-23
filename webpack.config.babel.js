@@ -11,6 +11,10 @@ const common = {
 	module: {
 		rules: [
 			{
+				test: /\.mdx?$/,
+				use: ['babel-loader', '@mdx-js/loader'],
+			},
+			{
 				test: /\.tsx?$/,
 				loader: 'ts-loader',
 				exclude: /node_modules/,
