@@ -1653,7 +1653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:1.6.22":
+"@mdx-js/react@npm:1.6.22, @mdx-js/react@npm:^1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/react@npm:1.6.22"
   peerDependencies:
@@ -1816,6 +1816,15 @@ __metadata:
   dependencies:
     "@types/unist": "*"
   checksum: 889a14965cbd01e3986ea7fb15b0029fd5d407aaf9508560aba38b1fed8dc7e7e5948268c17b6f026c75f25c98aa7b4de03396431394ca03702c300f870c7bee
+  languageName: node
+  linkType: hard
+
+"@types/mdx-js__react@npm:^1.5.4":
+  version: 1.5.4
+  resolution: "@types/mdx-js__react@npm:1.5.4"
+  dependencies:
+    "@types/react": "*"
+  checksum: ff154007a80d669a14e8f202991c9e25998f0216649bcb9cfc2ec4fa4859259b6e6b3797ea07ed023b49bc3a15dfd31e26f9fef40bde1e62e1e6c93408be0a79
   languageName: node
   linkType: hard
 
@@ -2672,6 +2681,13 @@ __metadata:
   version: 2.0.0
   resolution: "ci-info@npm:2.0.0"
   checksum: 553fe83c085fce5e19e20f85b993f24a463e6f805803837a8868607bb68b1300567868694a5dff1beca6c54926a4c0be1cc9ef0c35f810653d590bf64183f6a0
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "classnames@npm:2.3.1"
+  checksum: 57d536edede609f81425d24b062d8d720a466565faf1e38d32c881e883920baa71519ac70c7b565e9cd39201fb1c1ff9bdf8aabf8e26544bac481e7924867c83
   languageName: node
   linkType: hard
 
@@ -5497,6 +5513,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"prism-react-renderer@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "prism-react-renderer@npm:1.2.1"
+  peerDependencies:
+    react: ">=0.14.9"
+  checksum: b27670bd96e4320075f9a2932d440b3025f9ce1ff64ddd8d8e71867701aabd6c9d2914d5deecb7bef7e92ed59baaef538a31559ca71c76efee3711a064f3e8ff
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -6197,14 +6222,18 @@ fsevents@~2.3.1:
     "@babel/preset-react": ^7.14.5
     "@babel/register": ^7.13.16
     "@mdx-js/loader": ^1.6.22
+    "@mdx-js/react": ^1.6.22
     "@types/express": ^4.17.12
+    "@types/mdx-js__react": ^1.5.4
     "@types/react": ^17.0.11
     "@types/react-dom": ^17.0.7
     "@types/react-transition-group": ^4.4.1
     babel-loader: ^8.2.2
+    classnames: ^2.3.1
     express: ^4.17.1
     file-loader: ^6.2.0
     nodemon: ^2.0.7
+    prism-react-renderer: ^1.2.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-jss: ^10.6.0
