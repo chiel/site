@@ -11,6 +11,10 @@ const common = {
 	module: {
 		rules: [
 			{
+				test: /\.mdx?$/,
+				use: ['babel-loader', '@mdx-js/loader'],
+			},
+			{
 				test: /\.tsx?$/,
 				loader: 'ts-loader',
 				exclude: /node_modules/,
@@ -38,7 +42,7 @@ export default [
 	{
 		...common,
 		target: 'node',
-		entry: `./src/server`,
+		entry: ['./src/prism', './src/server'],
 		output: {
 			filename: 'index.js',
 		},
@@ -53,7 +57,7 @@ export default [
 	{
 		...common,
 		target: 'web',
-		entry: './src/client',
+		entry: ['./src/prism', './src/client'],
 		output: {
 			filename: 'public/assets/index.js',
 		},
