@@ -5522,6 +5522,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"prismjs@npm:^1.24.1":
+  version: 1.24.1
+  resolution: "prismjs@npm:1.24.1"
+  checksum: 337ce5e07815b38aa8e2b71aa64dc821c1dbe38c5dba9451b0c210c19c139cc01145914920e222ae0f54b45e65523c3863899d0c7f19cdec202a03ccd268a09b
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -6234,6 +6241,7 @@ fsevents@~2.3.1:
     file-loader: ^6.2.0
     nodemon: ^2.0.7
     prism-react-renderer: ^1.2.1
+    prismjs: ^1.24.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-jss: ^10.6.0

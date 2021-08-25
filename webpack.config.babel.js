@@ -42,7 +42,7 @@ export default [
 	{
 		...common,
 		target: 'node',
-		entry: `./src/server`,
+		entry: ['./src/prism', './src/server'],
 		output: {
 			filename: 'index.js',
 		},
@@ -57,7 +57,7 @@ export default [
 	{
 		...common,
 		target: 'web',
-		entry: './src/client',
+		entry: ['./src/prism', './src/client'],
 		output: {
 			filename: 'public/assets/index.js',
 		},
