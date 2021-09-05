@@ -36,7 +36,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app.kubernetes.io/name: app
+      app.kubernetes.io/name: site
   ingress:
     - from:
         - namespaceSelector:
