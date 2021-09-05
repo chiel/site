@@ -5,3 +5,5 @@
 /.pnp.*
 dist
 node_modules
+
+terraform/.terraform
