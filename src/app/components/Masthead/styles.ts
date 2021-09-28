@@ -11,7 +11,7 @@ export default createUseStyles((theme: Theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		height: 'calc(100vh - 8px)',
+		height: 'calc(100vh - 4px)',
 
 		'&::after': {
 			content: '""',

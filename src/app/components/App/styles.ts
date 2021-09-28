@@ -34,11 +34,12 @@ export default createUseStyles((theme: Theme) => ({
 
 		h2: {
 			fontSize: 27,
-			letterSpacing: '.2em',
+			letterSpacing: '.05em',
 		},
 
 		h3: {
 			fontSize: 21,
+			letterSpacing: '.05em',
 		},
 
 		p: {

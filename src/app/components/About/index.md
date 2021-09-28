@@ -1,0 +1,24 @@
+## Hello!
+
+I'm Chiel—a 34-year-old guy from the Netherlands. I love building digital products which I currently do for [Momentive][momentive] in Amsterdam. I enjoy many aspects of building products, from concept, to infrastructure, to implementing a pixel-perfect design on the frontend.
+
+Outside of work, I still really enjoy coding and it's where I do most of my learning these days—I usually have a side-project I chip away at. Other than that I enjoy gaming, watching movies/series with my girlfriend, cooking & baking and playing with our cats.
+
+
+## Values & Skills
+
+Although the positions I have held have mostly been frontend-related, I consider myself a full-stack developer with a keen interest in infra stuff. Over the past few years I've experimented quite a lot with things like Kubernetes and Terraform to augment my knowledge of writing application code.
+
+My typical "stack" is generally TypeScript (JavaScript if needed) + React for frontend, GraphQL (REST APIs are fine too) for data transfer, Go for most backends or things like bots (Node.js as a runner-up), Postgres for databases (Mongo for non-relational, but this is quite often misused to not have to give thought to database schemas).
+
+That said, the above are my general preferences and can vary pretty wildly depending on the project or the team. I've worked with plenty of other technologies and tools.
+
+When it came to rebuilding this website I wanted to showcase what I am capable of, so I wanted to automate as much as possible. What I ended up with is a Terraform stack which only needs two access tokens as inputs (one for DigitalOcean and one for GitHub) - the rest is all done through Terraform and GitHub Actions.
+
+I intend to do a write-up soon about everything I did in order to get the website up and running, but for the curious, [the majority of the code can be seen on GitHub](site).
+
+That said, it is a pretty simple website without a backend so it is definitely 100% over-engineered, but I've mainly done so for demonstration purposes. Plus it's fun.
+
+
+[momentive]: https://www.momentive.ai/
+[site]: https://github.com/chiel/site
