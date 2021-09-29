@@ -39,8 +39,7 @@ export function useViewportHeight() {
 }
 
 export function useScrollOffset() {
-	const initialOffset = typeof window !== 'undefined' ? window.pageYOffset : 0;
-	const [offset, setOffset] = useState(initialOffset);
+	const [offset, setOffset] = useState(0);
 
 	useEffect(() => {
 		function handleScroll() {
