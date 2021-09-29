@@ -4,14 +4,20 @@ import { Theme } from '../../theme';
 
 import img from './masthead.jpg';
 
+export const stickyHeight = 56;
+export const topOffset = 4;
+
 export default createUseStyles((theme: Theme) => ({
 	container: {
 		overflow: 'hidden',
-		position: 'relative',
+		position: 'absolute',
+		top: topOffset,
+		left: 0,
+		right: 0,
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		height: 'calc(100vh - 4px)',
+		height: `calc(100vh - ${topOffset}px)`,
 
 		'&::after': {
 			content: '""',
@@ -97,6 +103,34 @@ export default createUseStyles((theme: Theme) => ({
 			height: 32,
 			fontSize: 24,
 			lineHeight: '32px',
+		},
+	},
+
+	sticky: {
+		position: 'fixed',
+
+		'& $content': {
+			position: 'absolute',
+			bottom: 0,
+			left: 0,
+			right: 0,
+			height: stickyHeight,
+			transition: 'opacity .6s ease-out',
+
+			'& h1': {
+				margin: 0,
+				fontSize: 24,
+				lineHeight: `${stickyHeight}px`,
+
+				'& span': {
+					display: 'inline',
+					fontSize: 'inherit',
+				},
+			},
+		},
+
+		'& $titles': {
+			display: 'none',
 		},
 	},
 }));

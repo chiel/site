@@ -6,12 +6,12 @@ import Masthead from '../Masthead';
 import useStyles from './styles';
 
 export default function App() {
-	useStyles();
+	const css = useStyles();
 
 	return (
-		<React.Fragment>
+		<div className={css.container}>
 			<Masthead />
 			<Content><About /></Content>
-		</React.Fragment>
+		</div>
 	);
 }
