@@ -13,7 +13,7 @@ My typical "stack" is generally TypeScript (JavaScript if needed) + React for fr
 
 That said, the above are my general preferences and can vary pretty wildly depending on the project or the team. I've worked with plenty of other technologies and tools.
 
-When it came to rebuilding this website I wanted to showcase what I am capable of, so I wanted to automate as much as possible. What I ended up with is a Terraform stack which only needs two access tokens as inputs (one for DigitalOcean and one for GitHub) - the rest is all done through Terraform and GitHub Actions.
+When it came to rebuilding this website I wanted to showcase what I am capable of by automating as much as possible. What I ended up with is a Terraform stack which only needs two access tokens as inputs—one for DigitalOcean and one for GitHub—which is complemented by Kubernetes manifests deployed through GitHub Actions.
 
 I intend to do a write-up soon about everything I did in order to get the website up and running, but for the curious, [the majority of the code can be seen on GitHub][site].
 
