@@ -15,7 +15,7 @@ That said, the above are my general preferences and can vary pretty wildly depen
 
 When it came to rebuilding this website I wanted to showcase what I am capable of, so I wanted to automate as much as possible. What I ended up with is a Terraform stack which only needs two access tokens as inputs (one for DigitalOcean and one for GitHub) - the rest is all done through Terraform and GitHub Actions.
 
-I intend to do a write-up soon about everything I did in order to get the website up and running, but for the curious, [the majority of the code can be seen on GitHub](site).
+I intend to do a write-up soon about everything I did in order to get the website up and running, but for the curious, [the majority of the code can be seen on GitHub][site].
 
 That said, it is a pretty simple website without a backend so it is definitely 100% over-engineered, but I've mainly done so for demonstration purposes. Plus it's fun.
 
