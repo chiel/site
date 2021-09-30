@@ -11,7 +11,7 @@ export default function App() {
 	return (
 		<div className={css.container}>
 			<Masthead />
-			<Content><About /></Content>
+			<Content className={css.content}><About /></Content>
 		</div>
 	);
 }
