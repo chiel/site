@@ -50,6 +50,11 @@ export default createUseStyles((theme: Theme) => ({
 			},
 		},
 
+		ul: {
+			margin: [28, 0, 0],
+			padding: [0, 0, 0, 20],
+		},
+
 		strong: {
 			fontWeight: 400,
 		},

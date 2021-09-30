@@ -2946,6 +2946,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.23.0":
+  version: 2.23.0
+  resolution: "date-fns@npm:2.23.0"
+  checksum: 5b23cf7f08a27d0c1633e81304c95ac2bacb1160d86a25d36c40c84853796e442e597a4d75acec3f0920a71f3a65dd55b37565d356fa3fb4c2345225df42d930
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.2.0":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -6237,6 +6244,7 @@ fsevents@~2.3.1:
     "@types/react-transition-group": ^4.4.1
     babel-loader: ^8.2.2
     classnames: ^2.3.1
+    date-fns: ^2.23.0
     express: ^4.17.1
     file-loader: ^6.2.0
     nodemon: ^2.0.7
