@@ -11,6 +11,7 @@ export default createUseStyles((theme: Theme) => ({
 	container: {
 		overflow: 'hidden',
 		position: 'absolute',
+		zIndex: 1,
 		top: topOffset,
 		left: 0,
 		right: 0,
