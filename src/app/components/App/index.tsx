@@ -1,19 +1,16 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import About from '../About/index.md';
-import Content from '../Content';
-import History from '../History';
-import Masthead from '../Masthead';
+import Home from '../Home';
+
 import useStyles from './styles';
 
 export default function App() {
-	const css = useStyles();
+	useStyles();
 
 	return (
-		<div className={css.container}>
-			<Masthead />
-			<Content className={css.content}><About /></Content>
-			<History />
-		</div>
+		<Routes>
+			<Route path="/" element={<Home />} />
+		</Routes>
 	);
 }

@@ -1508,6 +1508,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.7.6":
+  version: 7.15.4
+  resolution: "@babel/runtime@npm:7.15.4"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: 64b6c250fd02a664f40835b7bfc3ec0b473d251bf4881b06b689b60662bf2ae17adc6fa32fb0e0de308de5d4bc383738c6030ad93d823066fb9fd7c18f552b56
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.8.4":
   version: 7.14.0
   resolution: "@babel/runtime@npm:7.14.0"
@@ -3822,6 +3831,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"history@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "history@npm:5.0.1"
+  dependencies:
+    "@babel/runtime": ^7.7.6
+  checksum: e77a3831f347e11d956131ca74634bb1f61e782e9415d96011c7856290db7bd9d9ae0988c34a0c9190087c129494c8c15a9a2f9f49d87dde5ac6c7c7678a125f
+  languageName: node
+  linkType: hard
+
 "hoist-non-react-statics@npm:^3.2.0, hoist-non-react-statics@npm:^3.3.0":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
@@ -5738,6 +5756,29 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"react-router-dom@npm:^6.0.0-beta.5":
+  version: 6.0.0-beta.5
+  resolution: "react-router-dom@npm:6.0.0-beta.5"
+  dependencies:
+    react-router: 6.0.0-beta.5
+  peerDependencies:
+    history: ">=5"
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 4b4cd8c0612f5f8a30f59a2fc1b8e0d122296e97a51ce5b81ead7615732d5cad841fda99ab09f14d488573039b67a5cc39d438e4990e001c9e85eb49c65fe432
+  languageName: node
+  linkType: hard
+
+"react-router@npm:6.0.0-beta.5":
+  version: 6.0.0-beta.5
+  resolution: "react-router@npm:6.0.0-beta.5"
+  peerDependencies:
+    history: ">=5"
+    react: ">=16.8"
+  checksum: 82959ed94185c5c4a42fc99cec7b1c7cf874f7119e86d6280d72738a787a4580879cd0193b3da62a14cc1143ec3ee3f8cdec2becb549e5db0eff037b96da8972
+  languageName: node
+  linkType: hard
+
 "react-transition-group@npm:^4.4.2":
   version: 4.4.2
   resolution: "react-transition-group@npm:4.4.2"
@@ -6247,12 +6288,14 @@ fsevents@~2.3.1:
     date-fns: ^2.23.0
     express: ^4.17.1
     file-loader: ^6.2.0
+    history: ^5.0.1
     nodemon: ^2.0.7
     prism-react-renderer: ^1.2.1
     prismjs: ^1.24.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-jss: ^10.6.0
+    react-router-dom: ^6.0.0-beta.5
     react-transition-group: ^4.4.2
     source-map-loader: ^3.0.0
     source-map-support: ^0.5.19
