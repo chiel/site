@@ -6,6 +6,11 @@ export default createUseStyles({
 		margin: [0, 'auto'],
 		padding: [40, 20, 40],
 
+		'& h1': {
+			margin: [80, 0, 40],
+			textAlign: 'center',
+		},
+
 		'& h2': {
 			margin: [80, 0, 40],
 			textAlign: 'center',

@@ -55,6 +55,7 @@ export default createUseStyles((theme: Theme) => ({
 			margin: [0, 0, 0, -9],
 			color: theme.pink,
 			fontSize: 88,
+			letterSpacing: '-0.06em',
 			lineHeight: '54px',
 			textAlign: 'center',
 

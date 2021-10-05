@@ -24,7 +24,7 @@ export default createUseStyles((theme: Theme) => ({
 		'h1, h2, h3': {
 			margin: [36, 0, 0],
 			fontFamily: 'ubuntu',
-			letterSpacing: '-0.06em',
+			letterSpacing: '.05em',
 			textTransform: 'uppercase',
 		},
 
@@ -34,12 +34,10 @@ export default createUseStyles((theme: Theme) => ({
 
 		h2: {
 			fontSize: 27,
-			letterSpacing: '.05em',
 		},
 
 		h3: {
 			fontSize: 21,
-			letterSpacing: '.05em',
 		},
 
 		p: {
