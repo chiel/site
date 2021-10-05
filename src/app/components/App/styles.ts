@@ -66,6 +66,13 @@ export default createUseStyles((theme: Theme) => ({
 			},
 		},
 
+		code: {
+			padding: [0, 4],
+			border: [1, 'solid', '#eee'],
+			background: '#f6f8fa',
+			fontFamily: 'dejavu sans mono, monospace',
+		},
+
 		'@media (min-width: 420px)': {
 			html: {
 				fontSize: 18,
