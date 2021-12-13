@@ -1,5 +1,5 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: site
@@ -23,16 +23,23 @@ spec:
     - host: kunkels.me
       http:
         paths:
-          - backend:
-              serviceName: site
-              servicePort: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: site
+                port:
+                  number: 80
 
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: app-allow-ingress
+  name: site-allow-ingress
+  labels:
+    app.kubernetes.io/name: site-allow-ingress
+    app.kubernetes.io/managed-by: github-actions
 spec:
   podSelector:
     matchLabels:
@@ -41,9 +48,10 @@ spec:
     - from:
         - namespaceSelector:
             matchLabels:
-              name: default
+              app.kubernetes.io/name: ingress
           podSelector:
             matchLabels:
+              app.kubernetes.io/component: controller
               app.kubernetes.io/name: ingress-nginx
 
 
@@ -61,6 +69,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: site
+    app.kubernetes.io/version: ${GITHUB_SHA}
   ports:
     - name: http
       port: 80
@@ -98,6 +107,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: site
+      app.kubernetes.io/version: ${GITHUB_SHA}
   template:
     metadata:
       labels:
