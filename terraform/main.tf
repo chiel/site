@@ -1,7 +1,7 @@
 module "namespace" {
   source = "github.com/chiel/project-namespace?ref=v0.2.0"
 
-  name       = "personal"
+  name       = "site"
   ghcr_token = var.ghcr_token
   ghcr_user  = var.ghcr_user
   kube_host  = var.kube_host
