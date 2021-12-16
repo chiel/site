@@ -33,7 +33,7 @@ export default function JobDescription({
 						{format(job.start, 'MMM yyyy')}
 						&mdash;
 						{job.end === Infinity ? 'present' : format(job.end as Date, 'MMM yyyy')}
-						, {duration}
+						{duration ? `, ${duration}` : ''}
 					)
 				</p>
 			</header>

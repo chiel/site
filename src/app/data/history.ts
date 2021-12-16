@@ -2,6 +2,7 @@ import { ComponentType } from 'react';
 
 import beamlyDescription from './beamly.md';
 import labelADescription from './label-a.md';
+import lemonadeDescription from './lemonade.md';
 import lifelyDescription from './lifely.md';
 import momentiveDescription from './momentive.md';
 import oddJobsDescription from './odd-jobs.md';
@@ -23,11 +24,20 @@ export interface Job {
 
 export const jobs: Job[] = [
 	{
+		company: 'Lemonade',
+		role: 'Senior frontend engineer',
+		location: 'Amsterdam',
+		start: new Date('2021-12-01'),
+		end: Infinity,
+		description: lemonadeDescription,
+		impact: 'major',
+	},
+	{
 		company: 'Momentive',
 		role: 'Frontend developer',
 		location: 'Amsterdam',
 		start: new Date('2019-02-04'),
-		end: Infinity,
+		end: new Date('2021-11-30'),
 		description: momentiveDescription,
 		impact: 'major',
 	},
