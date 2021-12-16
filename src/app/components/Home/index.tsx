@@ -1,6 +1,6 @@
 import React from 'react';
 
-import About from '../About/index.md';
+import About from '../About/index.mdx';
 import Content from '../Content';
 import History from '../History';
 import Masthead from '../Masthead';
