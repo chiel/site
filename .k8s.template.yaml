@@ -69,7 +69,6 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: site
-    app.kubernetes.io/version: ${GITHUB_SHA}
   ports:
     - name: http
       port: 80
@@ -107,7 +106,6 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: site
-      app.kubernetes.io/version: ${GITHUB_SHA}
   template:
     metadata:
       labels:
